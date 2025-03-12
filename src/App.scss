@@ -1,1 +1,12 @@
-// style go here
+h1 {
+  display: block;
+  margin-block: 10px;
+  text-align: center;
+}
+
+form {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

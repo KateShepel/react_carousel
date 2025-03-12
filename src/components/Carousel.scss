@@ -1,1 +1,28 @@
-// style go here
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+.container {
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-inline: auto;
+}
+
+.Carousel {
+  &__list {
+    display: flex;
+  }
+}
+
+.button {
+  width: 100px;
+  padding-inline: 20px;
+  &__container {
+    display: flex;
+    justify-content: center;
+    gap: 500px;
+  }
+}
