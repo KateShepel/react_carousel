@@ -20,7 +20,7 @@ const Carousel: React.FC<Props> = ({
 
   return (
     <div className="Carousel">
-      <div className="container" style={{ width: itemWidth * frameSize }}>
+      <div className="Carousel__container" style={{ width: itemWidth * frameSize }}>
         <ul
           className="Carousel__list"
           style={{
@@ -40,44 +40,42 @@ const Carousel: React.FC<Props> = ({
         </ul>
       </div>
 
-      {
-        <div className="button__container">
-          <button
-            className="button"
-            type="button"
-            onClick={() => {
-              if (visibleElements !== 0) {
-                setVisibleElements(
-                  Math.max(visibleElements - itemWidth * step, 0),
-                );
-              }
-            }}
-          >
-            Prev
-          </button>
+      <div className="Carousel-button__container">
+        <button
+          className="Carousel-button"
+          type="button"
+          onClick={() => {
+            if (visibleElements !== 0) {
+              setVisibleElements(
+                Math.max(visibleElements - itemWidth * step, 0),
+              );
+            }
+          }}
+        >
+          Prev
+        </button>
 
-          <button
-            className="button"
-            data-cy="next"
-            type="button"
-            onClick={() => {
-              if (
-                visibleElements !==
-                itemWidth * images.length - itemWidth * step
-              ) {
-                setVisibleElements(
-                  Math.min(
-                    visibleElements + itemWidth * step,
-                    itemWidth * images.length - itemWidth * frameSize,
-                  ),
-                );
-              }
-            }}
-          >
-            Next
-          </button>
-        </div>
-      }
+        <button
+          className="Carousel-button"
+          data-cy="next"
+          type="button"
+          onClick={() => {
+            if (
+              visibleElements !==
+              itemWidth * images.length - itemWidth * step
+            ) {
+              setVisibleElements(
+                Math.min(
+                  visibleElements + itemWidth * step,
+                  itemWidth * images.length - itemWidth * frameSize,
+                ),
+              );
+            }
+          }}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Styles/reset.scss';
 import './App.scss';
 import Carousel from './components/Carousel';
 
@@ -32,7 +33,9 @@ const App: React.FC = () => {
             type="number"
             id="itemId"
             value={itemWidth}
-            onChange={e => setItemWidth(Number(e.target.value))}
+            onChange={e => setItemWidth(
+              Math.max(1, Number(e.target.value))
+            )}
           />
         </label>
 
@@ -42,7 +45,9 @@ const App: React.FC = () => {
             type="number"
             id="frameId"
             value={frameSize}
-            onChange={e => setFrameSize(Number(e.target.value))}
+            onChange={e => setFrameSize(
+              Math.min(Math.max(1, Number(e.target.value)), images.length)
+            )}
           />
         </label>
 
@@ -52,7 +57,9 @@ const App: React.FC = () => {
             type="number"
             id="stepId"
             value={step}
-            onChange={e => setStep(Number(e.target.value))}
+            onChange={e => setStep(
+              Math.min(Math.max(1, Number(e.target.value)), images.length - 1)
+            )}
           />
         </label>
 
@@ -62,7 +69,9 @@ const App: React.FC = () => {
             type="number"
             name="animationDuration"
             value={animationDuration}
-            onChange={e => setAnimationDuration(Number(e.target.value))}
+            onChange={e => setAnimationDuration(
+              Math.max(0, Number(e.target.value))
+            )}
           />
         </label>
       </form>

@@ -10,3 +10,13 @@ form {
   flex-direction: column;
   gap: 10px;
 }
+
+label {
+  display: flex;
+  gap: 15px;
+}
+
+input {
+  padding-inline: 5px;
+  width: 50px;
+}
